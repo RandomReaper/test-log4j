@@ -5,9 +5,16 @@ import org.apache.logging.log4j.Logger;
 import org.joda.time.LocalTime;
 
 public class HelloWorld {
-  private static Logger logger = LogManager.getLogger(HelloWorld.class);
+  private static Logger log = LogManager.getLogger(HelloWorld.class);
 
   public static void main(String[] args) {
+    log.trace("trace");
+    log.debug("debug");
+    log.info("info");
+    log.warn("warning");
+    log.error("error");
+    log.fatal("fatal");
+
     LocalTime currentTime = new LocalTime();
     System.out.println("The current local time is: " + currentTime);
 
@@ -15,7 +22,7 @@ public class HelloWorld {
     try {
       System.out.println(greeter.sayHello());
     } catch (Exception e) {
-      logger.error("oups", e);
+      log.error("oops", e);
     }
   }
 }
